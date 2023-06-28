@@ -1,0 +1,19 @@
+@startuml
+skinparam actorStyle awesome
+User -->(Generate IP adress) :- connect phone & Laptop to WiFi
+User --> (display popup screen\nconnection message) :- Accept / Decline
+User --> (display status of connection) :- Succsessful connection / Connection declined
+(display status of connection) --> (view popup screen with message\n“save phone for further connections?”)
+(view popup screen with message\n“save phone for further connections?”)-->(view list with last 3 saved phones\nand virtual desktop) :- yes
+(view popup screen with message\n“save phone for further connections?”) -->(view wirtual desktop) :- no
+User --> (After virtual desktop was generated\nthe user can see on the left of the screen\na dropdown menu with settings of the app)
+json View_Menu{
+    "icon size": ["Large", "Small"],
+    "sort icons": ["By name", "By type"],
+    "change desktop color": ["orange", "green", "black"]
+}
+User --> (display icons\non virtual desktop)
+(display icons\non virtual desktop) --> (open new window\nwith SMS) :-double clik \non icon SMS
+(display icons\non virtual desktop) -->(oen new window\nwith Call Logs) :-double clik on icon\nCall Logs
+(display icons\non virtual desktop) --> (oen new window\nwith Files) :-double clik \non icon Files
+@enduml
