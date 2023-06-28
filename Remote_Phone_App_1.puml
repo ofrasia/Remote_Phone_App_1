@@ -16,4 +16,5 @@ User --> (display icons\non virtual desktop)
 (display icons\non virtual desktop) --> (open new window\nwith SMS) :-double clik \non icon SMS
 (display icons\non virtual desktop) -->(oen new window\nwith Call Logs) :-double clik on icon\nCall Logs
 (display icons\non virtual desktop) --> (oen new window\nwith Files) :-double clik \non icon Files
+
 @enduml
