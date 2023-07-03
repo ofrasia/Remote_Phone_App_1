@@ -1,0 +1,68 @@
+@startuml
+class Adresa_iP {
+}
+class Virtual_Desktop {
+}
+class Icons {
+}
+class SMS_Icon {
+}
+class CALL_LOG_Icon {
+}
+class FILES_Icon {
+}
+class Profile {
+}
+class button_Deny {
+}
+class button_Accept
+pop_up ..> Button_Deny
+pop_up ..>Button_Accept
+
+class Change_Icons_Size {
+to
+small()
+medium()
+large()
+}
+
+class Change_Desktop_Color {
+to
+black()
+gray()
+choose a picture()
+}
+
+class Sort_Icons_by_Name {
+from
+A to Z()
+Z to A()
+}
+
+
+
+Menu ..> Settings
+Settings ..> Change_Icons_Size
+Settings ..> Change_Desktop_Color
+Settings ..> Sort_Icons_by_Name
+Settings ..> Sort_Icons_by_last_used
+
+class User {
+name
+user1()
+user2()
+user3()
+}
+class Dropdwon_Menu {
+}
+class Popup {
+}
+class Settings {
+}
+class Status_of_connection {
+}
+class Window {
+}
+
+
+@enduml
