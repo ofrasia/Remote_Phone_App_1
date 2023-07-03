@@ -1,6 +1,4 @@
 @startuml
-class Adresa_iP {
-}
 class Virtual_Desktop {
 }
 class Icons {
@@ -63,6 +61,9 @@ class Status_of_connection {
 }
 class Window {
 }
-
+class Button_Yes {
+}
+class Button_No {
+}
 
 @enduml
