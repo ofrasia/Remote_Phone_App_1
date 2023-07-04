@@ -12,10 +12,11 @@ User --> (After virtual desktop was generated\nthe user can see on the left of t
 (display icons\non virtual desktop) --> (oen new window\nwith Files) :-double clik \non icon Files
 :User: -up-> (view SMS as TEXT in\na new popup screen) :- double ckick on\nSMS icon
 :User: -up-> (display call log as TEXT in\na new popup screen) :- double click on\nTEXT icon
-:User: -left-> (view dropdown menu with settings, where\nuser can change\ndesktop color\nchange icon size\nsort icons by name, or by the last icon that\nhas been accessed) :- click on "MENU" on the left side of the screen
+:User: -left-> (view dropdown menu with settings, where\nuser can change\ndesktop color\nchange icon size\nsort icons by name, or by the last icon that\nhas been accessed) :- click "MENU" on the left side of the screen\n then Settings
 :User: -down-> (view popu screen with message\nsave phone for further connections?) :- options to click:\n*yes\n*no
 :User: -down-> (if user clicks on "yes"\nthen view popup screen\nand give options to create\new user)
 :User: -up-> (display in a popup window\nicons that represent the saved files, pictures and movies\nthat cat be downloaded on the PC) :-double click on\nFILES icon
 :User: -up--> (If virtual desktop has more then\n 5 minutes of inactivity, display\n message that the connection\n will be interrupted in the following\n 30 seconds)
 (If virtual desktop has more then\n 5 minutes of inactivity, display\n message that the connection\n will be interrupted in the following\n 30 seconds) -->(display popup screen with message\n "continue_with_my_session") :- click on below message\n to continue with the active\n session
+:User: -up--> (view popu screen with message\n "are you sure you want to close this session?") :- click on\n Log out\n button
 @enduml

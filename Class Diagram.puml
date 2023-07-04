@@ -19,6 +19,12 @@ popup ..>Button_Accept
 popup ..> Button_Yes
 popup ..> Button_No
 popup -.-> Button_continue_with_my_session
+popup -.-> Button_Log_out
+
+class Button_Log_out {
+Log_out
+Stau_connected
+}
 
 class Change_Icons_Size {
 to
