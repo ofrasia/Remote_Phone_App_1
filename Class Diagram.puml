@@ -18,6 +18,7 @@ popup ..> Button_Deny
 popup ..>Button_Accept
 popup ..> Button_Yes
 popup ..> Button_No
+popup -.-> Button_continue_with_my_session
 
 class Change_Icons_Size {
 to
@@ -30,7 +31,7 @@ class Change_Desktop_Color {
 to
 black()
 gray()
-choose a picture()
+choose a Wallpaper()
 }
 
 class Sort_Icons_by_Name {
