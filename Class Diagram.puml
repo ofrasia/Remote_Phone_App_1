@@ -14,12 +14,12 @@ class Profile {
 class button_Deny {
 }
 class button_Accept
-popup ..> Button_Deny
-popup ..>Button_Accept
-popup ..> Button_Yes
-popup ..> Button_No
-popup -.-> Button_continue_with_my_session
-popup -.-> Button_Log_out
+popup .. Button_Deny
+popup .. Button_Accept
+popup .. Button_Yes
+popup .. Button_No
+popup -.- Button_continue_with_my_session
+popup -.- Button_Log_out
 
 class Button_Log_out {
 Log_out
@@ -46,13 +46,11 @@ A to Z()
 Z to A()
 }
 
-
-
-Menu ..> Settings
-Settings ..> Change_Icons_Size
-Settings ..> Change_Desktop_Color
-Settings ..> Sort_Icons_by_Name
-Settings ..> Sort_Icons_by_last_used
+Menu .. Settings
+Settings .. Change_Icons_Size
+Settings .. Change_Desktop_Color
+Settings .. Sort_Icons_by_Name
+Settings .. Sort_Icons_by_last_used
 
 class User {
 name
