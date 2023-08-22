@@ -52,6 +52,12 @@ Settings .. Change_Icons_Size
 Settings .. Change_Desktop_Color
 Settings .. Sort_Icons_by_Name
 Settings .. Sort_Icons_by_last_used
+Settings .. notification_popup
+
+class notification_popup {
+change display time
+disable notification_popup
+}
 
 class User {
 name
