@@ -20,10 +20,11 @@ popup .. Button_Yes
 popup .. Button_No
 popup -.- Button_continue_with_my_session
 popup -.- Button_Log_out
+popup -.- Notification_popup
 
 class Button_Log_out {
 Log_out
-Stau_connected
+Stay_connected
 }
 
 class Change_Icons_Size {
@@ -71,6 +72,10 @@ class Window {
 class Button_Yes {
 }
 class Button_No {
+}
+class Notification_popup {
+Display SMS received
+Dsiplay Missed Phone Call
 }
 
 @enduml
