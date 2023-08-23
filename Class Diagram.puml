@@ -3,7 +3,7 @@ class Virtual_Desktop {
 }
 class Icons {
 }
-class SMS_Icon {
+class Buton_SMS_Icon {
 }
 class CALL_LOG_Icon {
 }
@@ -14,12 +14,12 @@ class Profile {
 class button_Deny {
 }
 class button_Accept
-popup .. Button_Deny
+popup *-- Button_Deny
 popup .. Button_Accept
 popup .. Button_Yes
 popup .. Button_No
 popup -.- Button_continue_with_my_session
-popup -.- Button_Log_out
+popup *-- Button_Log_out
 popup -.- Notification_popup
 
 class Button_Log_out {
@@ -61,9 +61,7 @@ disable notification_popup
 
 class User {
 name
-user1()
-user2()
-user3()
+password
 }
 class Dropdwon_Menu {
 }
@@ -73,7 +71,7 @@ class Settings {
 }
 class Status_of_connection {
 }
-class Window {
+class fereastra_noua {
 }
 class Button_Yes {
 }
@@ -83,5 +81,8 @@ class Notification_popup {
 Display SMS received
 Dsiplay Missed Phone Call
 }
+class information
+fereastra_noua o-- information
+Buton_SMS_Icon.. fereastra_noua
 
 @enduml
