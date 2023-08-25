@@ -23,8 +23,8 @@ popup *-- Button_Log_out
 popup -.- Notification_popup
 
 class Button_Log_out {
-Log_out
-Stay_connected
+Yes
+No
 }
 
 class Change_Icons_Size {
@@ -62,6 +62,11 @@ disable notification_popup
 class User {
 name
 password
+nr max caractere
+afiseaza()
+memoreaza inpunt()
+delete username()
+limiteaza numar caractere()
 }
 class Dropdwon_Menu {
 }
