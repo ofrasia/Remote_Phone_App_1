@@ -12,12 +12,23 @@ class Button_FILES_Icon {
 class Profile {
 }
 class button_Deny {
+Yes
+No
+afiseaza()
 }
-class button_Accept
+class button_Accept{
+Yes
+No
+afiseaza()
+}
 popup *-- Button
 popup *-- Button_continue_with_my_session
 popup *-- Button_Log_out
 popup *-- Notification_popup
+popup *-- button_Accept
+popup *-- button_Deny
+Settings *-- notification_popup
+
 
 class Button_Log_out {
 afiseaza()
@@ -38,16 +49,17 @@ afiseaza()
 }
 
 class Change_Desktop_Color {
-to
-black()
-gray()
-choose a Wallpaper()
+afiseaza()
+salveaza()
+black
+gray
+choose_a_Wallpaper
 }
 
 class Sort_Icons_by_Name {
-from
-A to Z()
-Z to A()
+afiseaza()
+from_A_to_Z
+from_Z_to_A
 }
 
 class Menu{
@@ -62,20 +74,23 @@ notification_popup
 
 
 class notification_popup {
-change display time
-disable notification_popup
+change_display_time
+disable_notification_popup
+salveaza()
 }
 
 class User {
 name
 password
-nr max caractere
+nr_max_caractere
 afiseaza()
-memoreaza inpunt()
-delete username()
-limiteaza numar caractere()
+salveaza_inpunt()
+sterge_username()
+limiteaza_numar_caractere()
 }
 class Dropdwon_Menu {
+List
+afiseaza()
 }
 class Popup {
 
@@ -84,7 +99,7 @@ class Settings {
 }
 class Status_of_connection {
 connected
-not connected
+not_connected
 afiseaza()
 }
 class fereastra_noua {
@@ -92,8 +107,7 @@ class fereastra_noua {
 class Button {
 Yes
 No
-Accept
-Deny
+
 afiseaza()
 }
 
@@ -107,7 +121,6 @@ fereastra_noua *-- information
 Buton_SMS_Icon *-- fereastra_noua
 Button_CALL_LOG_Icon *-- fereastra_noua
 Button_FILES_Icon *-- fereastra_noua
-button_Accept *-- fereastra_noua
-button_Deny *-- fereastra_noua
+
 
 @enduml
