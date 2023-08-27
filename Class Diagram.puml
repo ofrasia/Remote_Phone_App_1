@@ -107,5 +107,7 @@ fereastra_noua *-- information
 Buton_SMS_Icon *-- fereastra_noua
 Button_CALL_LOG_Icon *-- fereastra_noua
 Button_FILES_Icon *-- fereastra_noua
+button_Accept *-- fereastra_noua
+button_Deny *-- fereastra_noua
 
 @enduml
