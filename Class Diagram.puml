@@ -5,9 +5,9 @@ class Icons {
 }
 class Buton_SMS_Icon {
 }
-class CALL_LOG_Icon {
+class Button_CALL_LOG_Icon {
 }
-class FILES_Icon {
+class Button_FILES_Icon {
 }
 class Profile {
 }
@@ -20,6 +20,11 @@ popup *-- Button_Log_out
 popup *-- Notification_popup
 
 class Button_Log_out {
+afiseaza()
+Yes
+No
+}
+class Button_continue_with_my_session {
 afiseaza()
 Yes
 No
@@ -100,5 +105,7 @@ afiseaza()
 class information
 fereastra_noua *-- information
 Buton_SMS_Icon *-- fereastra_noua
+Button_CALL_LOG_Icon *-- fereastra_noua
+Button_FILES_Icon *-- fereastra_noua
 
 @enduml
