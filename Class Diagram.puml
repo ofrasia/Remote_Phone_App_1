@@ -1,5 +1,7 @@
 @startuml
 class Virtual_Desktop {
+
+afiseaza()
 }
 class Icons {
 }
@@ -12,9 +14,14 @@ class Button_FILES_Icon {
 class Profile {
 }
 class button_Deny {
-Yes
-No
+culoare
+dimensiune
+text
+status
+disable
 afiseaza()
+schimba_culoare()
+
 }
 class button_Accept{
 Yes
@@ -28,6 +35,18 @@ popup *-- Notification_popup
 popup *-- button_Accept
 popup *-- button_Deny
 Settings *-- notification_popup
+popup *-- LogIn
+Menu -- User
+Settings *- Desktop_Color
+Settings *-- Icons_Size
+Settings *-- Icons
+Settings *-- Menu
+Settings *-- Dropdwon_Menu
+Virtual_Desktop *-- Button_FILES_Icon
+Virtual_Desktop *-- Buton_SMS_Icon
+Virtual_Desktop *-- Button_CALL_LOG_Icon
+Virtual_Desktop -- Profile
+
 
 
 class Button_Log_out {
@@ -41,42 +60,48 @@ Yes
 No
 }
 
-class Change_Icons_Size {
+class Icons_Size {
 small
 medium
 large
 afiseaza()
+salveaza()
 }
 
-class Change_Desktop_Color {
+class Desktop_Color {
 afiseaza()
 salveaza()
 black
 gray
-choose_a_Wallpaper
+Wallpaper
 }
 
-class Sort_Icons_by_Name {
-afiseaza()
-from_A_to_Z
-from_Z_to_A
+class Icons {
+sorteaza()
+salveaza()
+A_to_Z
+Z_to_A
 }
 
 class Menu{
-Settings
 afiseaza()
-Change_Icons_Size
-Change_Desktop_Color
-Sort_Icons_by_Name
-Sort_Icons_by_last_used
+modifica()
+schimba_dimensiune_icoane()
+Icons_Size
+User
+Desktop_Color
+Icons
 notification_popup
 }
 
 
 class notification_popup {
-change_display_time
-disable_notification_popup
+time
+notification_popup
 salveaza()
+change()
+disable()
+afiseaza()
 }
 
 class User {
@@ -91,6 +116,7 @@ limiteaza_numar_caractere()
 class Dropdwon_Menu {
 List
 afiseaza()
+selecteaza()
 }
 class Popup {
 
@@ -101,6 +127,7 @@ class Status_of_connection {
 connected
 not_connected
 afiseaza()
+inchide()
 }
 class fereastra_noua {
 }
@@ -116,11 +143,19 @@ SMS received
 Missed Phone Call
 afiseaza()
 }
-class information
+class information {
+contacte
+SMS
+}
 fereastra_noua *-- information
-Buton_SMS_Icon *-- fereastra_noua
-Button_CALL_LOG_Icon *-- fereastra_noua
-Button_FILES_Icon *-- fereastra_noua
+Buton_SMS_Icon .. fereastra_noua : click pe icoana
+Button_CALL_LOG_Icon .. fereastra_noua : click pe icoana
+Button_FILES_Icon .. fereastra_noua : click pe icoana
 
+class LogIn{
+Yes
+No
+afiseaza()
+}
 
 @enduml

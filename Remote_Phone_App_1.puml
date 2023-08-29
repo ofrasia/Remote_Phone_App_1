@@ -7,7 +7,7 @@ User -->(view list in a popup window\nwith last 3 saved phones\nand virtual desk
 User -->(view only virtual desktop\nwith icons) :- click no
 User --> (After virtual desktop was generated\nthe user can see on the left of the screen\na dropdown menu with settings of the app)
 :User: -up-> (display icons\non virtual desktop)
-:User: -up-> (view SMS as TEXT in\na new popup screen) :- double ckick on\nSMS icon
+:User: -up-> (view SMS as TEXT after click in virtual desktop \na new popup screen will be displayed) :- double ckick on\nSMS icon
 :User: -up-> (display call log as TEXT in\na new popup screen) :- double click on\nTEXT icon
 :User: -left-> (view dropdown menu with settings, where\nuser can change\ndesktop color\nchange icon size\nsort icons by name, or by the last icon that has been accessed\nchange notification timing message\nturn off notification message) :- click "MENU" on the left side of the screen\n then Settings
 :User: -down-> (view popu screen with message\nsave phone for further connections?) :- options to click:\n*yes\n*no
