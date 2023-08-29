@@ -13,7 +13,7 @@ class Button_FILES_Icon {
 }
 class Profile {
 }
-class button_Deny {
+class Buton_repsingere {
 culoare
 dimensiune
 text
@@ -21,8 +21,40 @@ status
 disable
 afiseaza()
 schimba_culoare()
-
 }
+class Telefon {
+}
+class Laptop_PC {
+}
+class Conexiune {
+}
+class Aplicatie {
+}
+class Mesaj_securitate {
+Conexiune
+Device
+Accepta_conexiune ()
+Respinge_conexiune ()
+}
+class Mesaj {
+Conexiune
+Buton
+Save_phone_for_further_connections?()
+Accept()
+Decline()
+}
+class Memorie_cash {
+}
+class IP {
+}
+class Device {
+}
+class Lista {
+Device
+View_last_3_saved_devices()
+}
+
+
 class button_Accept{
 Yes
 No
@@ -33,7 +65,8 @@ popup *-- Button_continue_with_my_session
 popup *-- Button_Log_out
 popup *-- Notification_popup
 popup *-- button_Accept
-popup *-- button_Deny
+popup *-- Buton_repsingere
+popup *-- Mesaj
 Settings *-- notification_popup
 popup *-- LogIn
 Menu -- User
@@ -41,7 +74,7 @@ Settings *- Desktop_Color
 Settings *-- Icons_Size
 Settings *-- Icons
 Settings *-- Menu
-Settings *-- Dropdwon_Menu
+Settings *-- Dropdwon_list
 Virtual_Desktop *-- Button_FILES_Icon
 Virtual_Desktop *-- Buton_SMS_Icon
 Virtual_Desktop *-- Button_CALL_LOG_Icon
@@ -111,18 +144,20 @@ nr_max_caractere
 afiseaza()
 salveaza_inpunt()
 sterge_username()
-limiteaza_numar_caractere()
+limiteaza_numar_caractere_la_16()
 }
-class Dropdwon_Menu {
-List
+class Dropdwon_list {
+Lista
 afiseaza()
 selecteaza()
 }
-class Popup {
 
+class Popup {
 }
+
 class Settings {
 }
+
 class Status_of_connection {
 connected
 not_connected
@@ -156,6 +191,18 @@ class LogIn{
 Yes
 No
 afiseaza()
+selecteaza()
 }
+
+Aplicatie .. Conexiune
+Aplicatie .. IP
+Aplicatie .. Memorie_cash
+Aplicatie .. Device
+Aplicatie *-- Mesaj_securitate
+Conexiune .. Telefon
+Conexiune .. Laptop_PC
+Aplicatie .. Lista
+
+
 
 @enduml
