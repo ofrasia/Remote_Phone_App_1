@@ -14,13 +14,13 @@ class Button_FILES_Icon {
 class Profile {
 }
 class Buton_repsingere {
-culoare
-dimensiune
-text
-status
-disable
-afiseaza()
-schimba_culoare()
+Conexiune
+Dimensiune
+Text
+Status
+Disable
+Afiseaza ()
+Schimba_culoare ()
 }
 class Telefon {
 }
@@ -79,6 +79,7 @@ Virtual_Desktop *-- Button_FILES_Icon
 Virtual_Desktop *-- Buton_SMS_Icon
 Virtual_Desktop *-- Button_CALL_LOG_Icon
 Virtual_Desktop -- Profile
+Aplicatie -- popup
 
 
 
@@ -152,7 +153,7 @@ afiseaza()
 selecteaza()
 }
 
-class Popup {
+class popup {
 }
 
 class Settings {
@@ -194,14 +195,15 @@ afiseaza()
 selecteaza()
 }
 
-Aplicatie .. Conexiune
-Aplicatie .. IP
-Aplicatie .. Memorie_cash
-Aplicatie .. Device
+Aplicatie *-- Conexiune
+Aplicatie *-- IP
+Aplicatie *-- Memorie_cash
+Aplicatie *-- Device
 Aplicatie *-- Mesaj_securitate
-Conexiune .. Telefon
-Conexiune .. Laptop_PC
-Aplicatie .. Lista
+Conexiune *-- Telefon
+Conexiune *-- Laptop_PC
+Aplicatie *-- Lista
+Aplicatie *-- Status_of_connection
 
 
 
