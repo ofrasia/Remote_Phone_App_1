@@ -13,7 +13,7 @@ class Button_FILES_Icon {
 }
 class Profile {
 }
-class Buton_repsingere {
+class Buton_respingere {
 Conexiune
 Dimensiune
 Text
@@ -28,8 +28,7 @@ class Laptop_PC {
 }
 class Conexiune {
 }
-class Aplicatie {
-}
+
 class Mesaj_securitate {
 Conexiune
 Device
@@ -38,17 +37,17 @@ Respinge_conexiune ()
 }
 class Mesaj {
 Conexiune
-Buton
+Buton_Name
 Save_phone_for_further_connections?()
 Accept()
 Decline()
 }
-class Memorie_cash {
+
+class Adresa_IP_telefon {
+Valoare
+Salveaza_Valoare_in_Memoria Cache ()
 }
-class IP {
-}
-class Device {
-}
+
 class Lista {
 Device
 View_last_3_saved_devices()
@@ -65,11 +64,11 @@ popup *-- Button_continue_with_my_session
 popup *-- Button_Log_out
 popup *-- Notification_popup
 popup *-- button_Accept
-popup *-- Buton_repsingere
+popup *-- Buton_respingere
 popup *-- Mesaj
 Settings *-- notification_popup
 popup *-- LogIn
-Menu -- User
+Menu .. User
 Settings *- Desktop_Color
 Settings *-- Icons_Size
 Settings *-- Icons
@@ -79,7 +78,7 @@ Virtual_Desktop *-- Button_FILES_Icon
 Virtual_Desktop *-- Buton_SMS_Icon
 Virtual_Desktop *-- Button_CALL_LOG_Icon
 Virtual_Desktop -- Profile
-Aplicatie -- popup
+
 
 
 
@@ -89,9 +88,12 @@ Yes
 No
 }
 class Button_continue_with_my_session {
-afiseaza()
-Yes
-No
+afiseaza ()
+Select ()
+Text
+Dimensiune
+Culoare
+
 }
 
 class Icons_Size {
@@ -125,7 +127,7 @@ Icons_Size
 User
 Desktop_Color
 Icons
-notification_popup
+Time_to_show_popup
 }
 
 
@@ -160,8 +162,9 @@ class Settings {
 }
 
 class Status_of_connection {
-connected
-not_connected
+Status_connected
+Culoare
+Transparenta
 afiseaza()
 inchide()
 }
@@ -195,16 +198,9 @@ afiseaza()
 selecteaza()
 }
 
-Aplicatie *-- Conexiune
-Aplicatie *-- IP
-Aplicatie *-- Memorie_cash
-Aplicatie *-- Device
-Aplicatie *-- Mesaj_securitate
+
 Conexiune *-- Telefon
 Conexiune *-- Laptop_PC
-Aplicatie *-- Lista
-Aplicatie *-- Status_of_connection
-
 
 
 @enduml
