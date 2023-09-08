@@ -38,9 +38,9 @@ Respinge_conexiune ()
 class Mesaj {
 Conexiune
 Buton_Name
-Save_phone_for_further_connections?()
-Accept()
-Decline()
+Save_phone_for_further_connections? ()
+Accept ()
+Decline ()
 }
 
 class Adresa_IP_telefon {
@@ -50,14 +50,14 @@ Salveaza_Valoare_in_Memoria Cache ()
 
 class Lista {
 Device
-View_last_3_saved_devices()
+View_last_3_saved_devices ()
 }
 
 
 class button_Accept{
 Yes
 No
-afiseaza()
+afiseaza ()
 }
 popup *-- Button
 popup *-- Button_continue_with_my_session
@@ -83,7 +83,7 @@ Virtual_Desktop -- Profile
 
 
 class Button_Log_out {
-afiseaza()
+afiseaza ()
 Yes
 No
 }
@@ -97,32 +97,33 @@ Culoare
 }
 
 class Icons_Size {
-small
-medium
-large
-afiseaza()
-salveaza()
+Size
+small ()
+medium ()
+large ()
+afiseaza ()
+salveaza ()
 }
 
 class Desktop_Color {
-afiseaza()
-salveaza()
+afiseaza ()
+salveaza ()
 black
 gray
 Wallpaper
 }
 
 class Icons {
-sorteaza()
-salveaza()
+sorteaza ()
+salveaza ()
 A_to_Z
 Z_to_A
 }
 
 class Menu{
-afiseaza()
-modifica()
-schimba_dimensiune_icoane()
+afiseaza ()
+modifica ()
+schimba_dimensiune_icoane ()
 Icons_Size
 User
 Desktop_Color
@@ -134,25 +135,25 @@ Time_to_show_popup
 class notification_popup {
 time
 notification_popup
-salveaza()
-change()
-disable()
-afiseaza()
+salveaza ()
+change ()
+disable ()
+afiseaza ()
 }
 
 class User {
 name
 password
 nr_max_caractere
-afiseaza()
-salveaza_inpunt()
-sterge_username()
-limiteaza_numar_caractere_la_16()
+afiseaza ()
+salveaza_inpunt ()
+sterge_username ()
+limiteaza_numar_caractere_la_16 ()
 }
 class Dropdwon_list {
 Lista
-afiseaza()
-selecteaza()
+afiseaza ()
+selecteaza ()
 }
 
 class popup {
@@ -165,8 +166,8 @@ class Status_of_connection {
 Status_connected
 Culoare
 Transparenta
-afiseaza()
-inchide()
+afiseaza ()
+inchide ()
 }
 class fereastra_noua {
 }
@@ -180,7 +181,7 @@ afiseaza()
 class Notification_popup {
 SMS received
 Missed Phone Call
-afiseaza()
+afiseaza ()
 }
 class information {
 contacte
@@ -194,13 +195,24 @@ Button_FILES_Icon .. fereastra_noua : click pe icoana
 class LogIn{
 Yes
 No
-afiseaza()
-selecteaza()
+afiseaza ()
+selecteaza ()
 }
 
 
 Conexiune *-- Telefon
 Conexiune *-- Laptop_PC
 
+class Timer {
+Timp
+Activare_timer ()
+Dezactivare_timer ()
+}
+note left: Activare timer presupune citirea timpului de la OS si salvarea \nin proprietatea timp
+note bottom: Dezactivare timer verifica daca au trecut cele 5 minute \nsi urmeaza procesul de logout
+
+class procesul_de_hoovering {
+
+}
 
 @enduml
