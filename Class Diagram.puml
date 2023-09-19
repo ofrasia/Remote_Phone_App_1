@@ -32,7 +32,7 @@ Selecteaaz_Apel ()
 Apeleaza ()
 Sterge_Lista_Apeluri ()
 }
-note top : Apelurile pierdute vor fi accesate \nprintr-un dublu clic pe icoana "CALL_LOG"
+note top : Apelurile pierdute vor fi accesate \nprintr-un dublu click pe icoana "CALL_LOG"
 
 class Button_FILES_Icon {
 Dimensiune
@@ -52,9 +52,10 @@ Conexiune
 Dimensiune
 Text
 Status
-Disable
 Afiseaza ()
 Schimba_culoare ()
+Selecteaza_Repinge ()
+
 }
 
 class Telefon {
@@ -73,7 +74,7 @@ class Conexiune {
 Text
 afiseaza ()
 }
-note bottom : Aceasta clasa va afisa un mesaj intr-un popup \ndaca conexiunea a fost realizatra \ncu succes, sau a avut loc o eroare.
+note top : Aceasta clasa va afisa un mesaj intr-un popup \ndaca conexiunea a fost realizatra \ncu succes, sau a avut loc o eroare.
 
 class Mesaj_securitate {
 Conexiune
@@ -92,7 +93,8 @@ Decline ()
 
 class Adresa_IP_telefon {
 Valoare
-Salveaza_Valoare_in_Memoria Cache ()
+Salveaza_Valoare_pe_HDD ()
+Genereaza_Adresa_IP ()
 }
 Note right : Adresa IP va fi generata de aplicatie \nsi va primi o valoare dupa ce telefonul \nare o conexiune stabila la WiFi
 
@@ -124,12 +126,12 @@ popup *-- LogIn
 Settings *- Desktop_Color
 Settings *-- Icons_Size
 Settings *-- Icons
-Settings *-- Menu
+Settings --* Menu
 Settings *-- Dropdwon_list
 Virtual_Desktop *-- Button_FILES_Icon
 Virtual_Desktop *-- Buton_SMS_Icon
 Virtual_Desktop *-- Button_CALL_LOG_Icon
-Virtual_Desktop *-- User_Profile
+Virtual_Desktop "1" o-- "0..1" User_Profile
 Virtual_Desktop *-- Mesaj_securitate
 Settings *-- User_Profile
 User_Profile .. fereastra_noua : click pe Setari \npentru a deschide \no fereastra noua
@@ -138,6 +140,7 @@ popup *-- Status_of_connection
 Settings *- Lista
 Virtual_Desktop *- Conexiune
 Virtual_Desktop *- Timer
+
 
 class User_Profile {
 Setari
@@ -208,6 +211,8 @@ Desktop_Color
 Icons
 Time_to_show_popup
 }
+
+note top : proprietatile trebuiesc sterse din Menu si \nsa ramana doar la Settings
 
 class notification_popup {
 time
@@ -292,6 +297,7 @@ fereastra_noua *-- information
 Buton_SMS_Icon .. fereastra_noua : click pe icoana
 Button_CALL_LOG_Icon .. fereastra_noua : click pe icoana
 Button_FILES_Icon .. fereastra_noua : click pe icoana
+Adresa_IP_telefon .. Conexiune
 
 class LogIn {
 Text
