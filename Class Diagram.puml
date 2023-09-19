@@ -72,8 +72,8 @@ Eroare_conexiune ()
 class Conexiune {
 Text
 afiseaza ()
-
 }
+note bottom : Aceasta clasa va afisa un mesaj intr-un popup \ndaca conexiunea a fost realizatra \ncu succes, sau a avut loc o eroare.
 
 class Mesaj_securitate {
 Conexiune
@@ -263,6 +263,7 @@ Dimensiune
 Culoare
 Opacitate
 Afiseaza_informatii ()
+Inchide_fereastra ()
 }
 
 class Button {
@@ -284,6 +285,7 @@ Contacte
 SMS
 Files
 Afiseaza ()
+Inchide_fereastra ()
 }
 
 fereastra_noua *-- information
@@ -318,5 +320,14 @@ Hoover_over_desktop ()
 Click_anywhere_in_app ()
 }
 note left : Activare timer - timerul se reseteaza \nprin procesul de hoovering peste \ndesktopul aplicatiei, \nsau daca se apasa un click, \noriunde in aplicatie.
+
+class Informatii_SMS {
+}
+
+class Informatii_Contacte {
+}
+
+class Informatii_Files {
+}
 
 @enduml
