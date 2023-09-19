@@ -1,18 +1,52 @@
 @startuml
 class Virtual_Desktop {
-
-afiseaza()
+Icon SMS
+Icon Call Log
+Icon Files
+Buttons
+Afiseaza ()
 }
+
 class Icons {
 }
+
 class Buton_SMS_Icon {
+Dimensiune
+Culoare
+Forma
+Nume
+Afiseaza_Lista_SMS-uri ()
+Sterge_SMS ()
+Selecteaza_SMS ()
+Sorteaza_Lista_SMS-uri ()
 }
+note bottom : SMS-urile de pe device,\nvor putea fi accesate \nprintr-un dublu ckick pe icoana "SMS"
+
 class Button_CALL_LOG_Icon {
+Dimensiune
+Culoare
+Forma
+Nume
+Afiseaza_Lista_Apeluri ()
+Selecteaaz_Apel ()
+Apeleaza ()
+Sterge_Lista_Apeluri ()
 }
+note top : Apelurile pierdute vor fi accesate \nprintr-un dublu clic pe icoana "CALL_LOG"
+
 class Button_FILES_Icon {
+Dimensiune
+Culoare
+Nume
+Forma
+Afiseaza_Lista_Fisiere ()
+Sorteaza_Fisiere_Dupa_Nume ()
+Sorteaza_Fisiere_Dupa_Data_Modficarii ()
+Sterge_Fisiere ()
+Afiseaza_Proprietati_Fisier ()
 }
-class Profile {
-}
+note bottom : Fisiserele de pe dispozitiv \nvor fi accesate printr-un \ndublu click pe icoana "Files"
+
 class Buton_respingere {
 Conexiune
 Dimensiune
@@ -22,11 +56,23 @@ Disable
 Afiseaza ()
 Schimba_culoare ()
 }
+
 class Telefon {
+Text
+Conexiune_realizata_cu_succes ()
+Eroare_conexiune ()
 }
+
 class Laptop_PC {
+Text
+Conexiune_realizata_cu_succes ()
+Eroare_conexiune ()
 }
+
 class Conexiune {
+Text
+afiseaza ()
+
 }
 
 class Mesaj_securitate {
@@ -35,6 +81,7 @@ Device
 Accepta_conexiune ()
 Respinge_conexiune ()
 }
+
 class Mesaj {
 Conexiune
 Buton_Name
@@ -47,6 +94,7 @@ class Adresa_IP_telefon {
 Valoare
 Salveaza_Valoare_in_Memoria Cache ()
 }
+Note right : Adresa IP va fi generata de aplicatie \nsi va primi o valoare dupa ce telefonul \nare o conexiune stabila la WiFi
 
 class Lista {
 Device
@@ -55,10 +103,15 @@ View_last_3_saved_devices ()
 
 
 class button_Accept{
-Yes
-No
+Text
+Dimensiune
+Culoare
+Asezare_in_pagina
 afiseaza ()
+selecteaza_Accept ()
+selecteaza_Cancel ()
 }
+
 popup *-- Button
 popup *-- Button_continue_with_my_session
 popup *-- Button_Log_out
@@ -68,7 +121,6 @@ popup *-- Buton_respingere
 popup *-- Mesaj
 Settings *-- notification_popup
 popup *-- LogIn
-Menu .. User
 Settings *- Desktop_Color
 Settings *-- Icons_Size
 Settings *-- Icons
@@ -77,23 +129,48 @@ Settings *-- Dropdwon_list
 Virtual_Desktop *-- Button_FILES_Icon
 Virtual_Desktop *-- Buton_SMS_Icon
 Virtual_Desktop *-- Button_CALL_LOG_Icon
-Virtual_Desktop -- Profile
+Virtual_Desktop *-- User_Profile
+Virtual_Desktop *-- Mesaj_securitate
+Settings *-- User_Profile
+User_Profile .. fereastra_noua : click pe Setari \npentru a deschide \no fereastra noua
+Virtual_Desktop *-- popup
+popup *-- Status_of_connection
+Settings *- Lista
+Virtual_Desktop *- Conexiune
+Virtual_Desktop *- Timer
 
-
-
+class User_Profile {
+Setari
+Name
+Password
+Nr_max_caractere
+Selecteaza_Setari ()
+Modifica_Parola ()
+Salveaza_Noua_Parola ()
+Afiseaza ()
+Salveaza_input ()
+Sterge_Username ()
+Limiteaza_Nr_Caractere_La_16 ()
+}
+note bottom : Aceasta clasa se afla si la clasa Settings \ndar se regaseste si ca si icoana pe Virtual_Desktop \ntocmai pentru a avea un acces mai simplu la setarile \nprofilului. Nu va fi disponibila icoana pe Desktop in cazul in care \nutilizatorul este conectat ca si "Guest", iar in lista din Settings, \nva aparea greyed out.
 
 class Button_Log_out {
-afiseaza ()
-Yes
-No
+Text
+Dimensiunea
+Culoare
+Asezare_in_pagina
+selecteaza_Yes ()
+selecteaza_No ()
 }
+
 class Button_continue_with_my_session {
 afiseaza ()
-Select ()
 Text
 Dimensiune
 Culoare
-
+Asezare_in_pagina
+selecteaza_Yes ()
+selecteaza_No ()
 }
 
 class Icons_Size {
@@ -106,31 +183,31 @@ salveaza ()
 }
 
 class Desktop_Color {
-afiseaza ()
-salveaza ()
-black
-gray
+Afiseaza ()
+Salveaza ()
+Modifica ()
+Culoare
 Wallpaper
 }
 
 class Icons {
 sorteaza ()
 salveaza ()
-A_to_Z
-Z_to_A
+Marime
+Culoare
 }
 
-class Menu{
+class Menu {
 afiseaza ()
 modifica ()
 schimba_dimensiune_icoane ()
+Salveaza ()
 Icons_Size
-User
+User_Profile
 Desktop_Color
 Icons
 Time_to_show_popup
 }
-
 
 class notification_popup {
 time
@@ -142,39 +219,56 @@ afiseaza ()
 }
 
 class User {
-name
-password
-nr_max_caractere
+Name
+Password
+Nr_max_caractere
 afiseaza ()
 salveaza_inpunt ()
 sterge_username ()
 limiteaza_numar_caractere_la_16 ()
 }
+
 class Dropdwon_list {
 Lista
+Text
 afiseaza ()
 selecteaza ()
 }
 
 class popup {
+Dimensiune
+Asezare_in_pagina
+Text
+Culoare
+Inchide_popup ()
 }
 
 class Settings {
 }
 
 class Status_of_connection {
-Status_connected
+Status
 Culoare
 Transparenta
 afiseaza ()
 inchide ()
+Connected ()
+Not_Connected ()
+Modifica_Culoare ()
+Modifica_Transparenta_20%-90% ()
 }
-class fereastra_noua {
-}
-class Button {
-Yes
-No
 
+class fereastra_noua {
+Dimensiune
+Culoare
+Opacitate
+Afiseaza_informatii ()
+}
+
+class Button {
+information
+selecteaza_Yes ()
+selecteaza_No ()
 afiseaza()
 }
 
@@ -182,21 +276,28 @@ class Notification_popup {
 SMS received
 Missed Phone Call
 afiseaza ()
+Selecteaza_SMS_received ()
 }
+
 class information {
-contacte
+Contacte
 SMS
+Files
+Afiseaza ()
 }
+
 fereastra_noua *-- information
 Buton_SMS_Icon .. fereastra_noua : click pe icoana
 Button_CALL_LOG_Icon .. fereastra_noua : click pe icoana
 Button_FILES_Icon .. fereastra_noua : click pe icoana
 
-class LogIn{
-Yes
-No
+class LogIn {
+Text
+Dimensiune
+Asezare_in_pagina
 afiseaza ()
-selecteaza ()
+selecteaza_LogIn ()
+selecteaza_Cancel ()
 }
 
 
@@ -208,11 +309,14 @@ Timp
 Activare_timer ()
 Dezactivare_timer ()
 }
-note left: Activare timer presupune citirea timpului de la OS si salvarea \nin proprietatea timp
-note bottom: Dezactivare timer verifica daca au trecut cele 5 minute \nsi urmeaza procesul de logout
+note right: Activare timer presupune citirea timpului de la OS si salvarea \nin proprietatea timp
+note top: Dezactivare timer verifica daca au trecut cele 5 minute \nsi urmeaza procesul de logout
+
 
 class procesul_de_hoovering {
-
+Hoover_over_desktop ()
+Click_anywhere_in_app ()
 }
+note left : Activare timer - timerul se reseteaza \nprin procesul de hoovering peste \ndesktopul aplicatiei, \nsau daca se apasa un click, \noriunde in aplicatie.
 
 @enduml
