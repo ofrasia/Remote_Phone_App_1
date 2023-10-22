@@ -144,15 +144,19 @@ Virtual_Desktop *- Timer
 
 class User_Profile {
 Setari
-Name
+Username
+Email
 Password
 Nr_max_caractere
+Login ()
+Logout ()
+Regiter ()
+Reset_Password ()
 Selecteaza_Setari ()
-Modifica_Parola ()
-Salveaza_Noua_Parola ()
+Change_Password ()
+Save_Password ()
 Afiseaza ()
-Salveaza_input ()
-Sterge_Username ()
+Delete_Username ()
 Limiteaza_Nr_Caractere_La_16 ()
 }
 note bottom : Aceasta clasa se afla si la clasa Settings \ndar se regaseste si ca si icoana pe Virtual_Desktop \ntocmai pentru a avea un acces mai simplu la setarile \nprofilului. Nu va fi disponibila icoana pe Desktop in cazul in care \nutilizatorul este conectat ca si "Guest", iar in lista din Settings, \nva aparea greyed out.
@@ -327,13 +331,91 @@ Click_anywhere_in_app ()
 }
 note left : Activare timer - timerul se reseteaza \nprin procesul de hoovering peste \ndesktopul aplicatiei, \nsau daca se apasa un click, \noriunde in aplicatie.
 
-class Informatii_SMS {
-}
-
 class Informatii_Contacte {
+ContactID
+FirstName
+LastName
+PhoneNumber
+Email
+Add_Contact ()
+Remove_Contact ()
+Get_Full_Name ()
+Get_Phone_Number ()
+Get_Email ()
+Get_Contact_ID ()
 }
 
 class Informatii_Files {
+File_Name
+File_Size
+File_Type
+Open ()
+Save ()
+Cloe ()
+}
+
+class Folder {
+Folder_Name
+Files: List<File>
+Add_File ()
+Revome_File ()
+List_File ()
+}
+
+class FileManager {
+Root_Folder
+Create_Folder ()
+Delete_Folder ()
+Search_File ()
+}
+
+class Call {
+CallID
+Caller
+Receiver
+Start_Time
+End_Time
+Duration
+Stauts
+Answer_Call ()
+End_Call ()
+Get_Status ()
+Get_Duration ()
+Get_Caller ()
+Get_Receiver ()
+}
+
+class CallLog {
+Calls
+Add_Call ()
+Remove_Call ()
+Get_CallLog ()
+Search_Call ()
+Get_Recent_Calls ()
+}
+
+class Message_Information {
+Message_ID
+Text
+Encoding
+Sender
+Receiver
+Timestamp
+Content
+Send ()
+Receive ()
+Get_Content ()
+Get_Sender ()
+Get_Receiver ()
+Get_Timestamp ()
+}
+
+class Message_Store {
+Messages
+Add_Message ()
+Remove_Message ()
+Get_Messages ()
+Search_Messages ()
 }
 
 @enduml
